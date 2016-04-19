@@ -1,0 +1,40 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    Label:
+        id: time
+
+    BoxLayout:
+        height: 90
+        orientation: 'horizontal'
+        padding: 20
+        spacing: 20
+        size_hint: (1, None) # terminates the default effect of height#match_parent
+
+        RobotoButton:
+            id: start_stop
+            text: 'Start'
+            on_release: app.start_stop()
+
+        RobotoButton:
+            text: 'Reset'
+            on_release: app.reset()
+            background_normal: 'img/red_button_normal.png'
+            background_down: 'img/red_button_down.png'
+
+    Label:
+        id: stopwatch
+        text: '00:00.[size=40]00[/size]'
+
+<Label>:
+    font_name: 'Roboto'
+    font_size: 60
+    markup: True
+
+<RobotoButton@Button>:
+    background_normal: 'img/button_normal.png'
+    background_down: 'img/button_down.png'
+    border: [2] * 4
+    font_name: 'Roboto'
+    font_size: 25
+    bold: True
